@@ -1,24 +1,20 @@
+//Node modules
 const express = require("express");
 const bodyParser = require("body-parser");
 
+//Node modules functions
 const app = express();
 
+//Importing routes
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
+
+//Parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/add-product", (req, res, next) => {
-  res.send(
-    '<form action="/product" method="POST"><input type="text" name= "title"><button type="submit">Add product</button></form>'
-  );
-});
+//Routes
+app.use(adminRoutes);
+app.use(shopRoutes);
 
-app.post("/product", (req, res, next) => {
-  console.log(req.body);
-  res.redirect("/");
-});
-
-app.use("/", (req, res, next) => {
-  //console.log("In another middleware!");
-  res.send("<h1>Hello my friend, this is express</h1>");
-});
-
+//server
 app.listen(3000);
