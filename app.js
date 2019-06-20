@@ -12,9 +12,14 @@ const shopRoutes = require("./routes/shop");
 //Parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Routes
-app.use(adminRoutes);
+//outsourced routes
+app.use("/admin", adminRoutes);
 app.use(shopRoutes);
+
+//Error page
+app.use((req, res, next) => {
+  res.status(404).send("<h1>PAGE NOT FOUND</h1>");
+});
 
 //server
 app.listen(3000);
