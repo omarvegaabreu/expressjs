@@ -6,7 +6,7 @@ const router = express.Router();
 
 //Routes
 router.get("/", (req, res, next) => {
-  res.send("<h1>Hello my friend, this is express</h1>");
+  res.send("<h1>HELLO THIS IS MY MAIN ROUTE THE SHOP JS FILE</h1>");
 });
 
 //Module exports
