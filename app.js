@@ -13,6 +13,9 @@ const shopRoutes = require("./routes/shop");
 //Parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//Route to public folder
+app.use(express.static(path.join(__dirname, "public")));
+
 //Outsourced routes
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
