@@ -1,6 +1,7 @@
 //Node modules
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 //Node modules functions
 const app = express();
@@ -12,13 +13,13 @@ const shopRoutes = require("./routes/shop");
 //Parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//outsourced routes
+//Outsourced routes
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
-//Error page
+//Routing 404 page
 app.use((req, res, next) => {
-  res.status(404).send("<h1>PAGE NOT FOUND</h1>");
+  res.status(404).sendFile(path.join(__dirname, "views", "pagenotfound.html"));
 });
 
 //server

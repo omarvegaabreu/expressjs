@@ -1,12 +1,13 @@
 //Node modules
 const express = require("express");
+const path = require("path");
 
 //Variables
 const router = express.Router();
 
-//Routes
+//Route to views folder
 router.get("/", (req, res, next) => {
-  res.send("<h1>HELLO THIS IS MY MAIN ROUTE THE SHOP JS FILE</h1>");
+  res.sendFile(path.join(__dirname, "../", "views", "shop.html"));
 });
 
 //Module exports
