@@ -6,6 +6,10 @@ const path = require("path");
 //Node modules functions
 const app = express();
 
+//Global configuration values
+app.get("view engine", "pug");
+app.set("views", "views");
+
 //Importing routes
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
