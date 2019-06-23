@@ -5,11 +5,14 @@ const path = require("path");
 
 const router = express.Router();
 
+const adminData = require("./admin");
+
 //Root directory path
 const rootDirectory = require("../util/path");
 
 //Route to views folder
 router.get("/", (req, res, next) => {
+  console.log("shop.js", adminData.products);
   res.sendFile(path.join(rootDirectory, "views", "shop.html"));
 });
 
