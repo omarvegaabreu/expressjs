@@ -12,7 +12,8 @@ const rootDirectory = require("../util/path");
 
 //Route to views folder
 router.get("/", (req, res, next) => {
-  res.render("shop");
+  const products = adminData.products;
+  res.render("shop", { prods: products, docTitle: "Shop" });
 
   // console.log("shop.js", adminData.products);
   // res.sendFile(path.join(rootDirectory, "views", "shop.html"));

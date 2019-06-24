@@ -14,7 +14,7 @@ const products = [];
 
 //Route to views folder
 router.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  res.render("add-product", { pageTitle: "Add product" });
 });
 
 //admin/add-product POST request
