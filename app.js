@@ -2,13 +2,16 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
+const expressHbs = require("express-handlebars");
 
 //Node modules functions
 const app = express();
 
 //Global configuration values templating engines
-app.set("view engine", "pug");
-app.set("views", "views");
+
+//Pug
+// app.set("view engine", "pug");
+// app.set("views", "views");
 
 //Importing routes
 const adminData = require("./routes/admin");
