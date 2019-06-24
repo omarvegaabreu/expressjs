@@ -10,7 +10,12 @@ const app = express();
 //Global configuration values templating engines
 
 //Pug
-app.set("view engine", "pug");
+// app.set("view engine", "pug");
+// app.set("views", "views");
+
+//Handlebars
+app.engine("hbs", expressHbs());
+app.set("view engine", "hbs");
 app.set("views", "views");
 
 //Importing routes
