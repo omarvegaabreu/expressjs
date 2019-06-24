@@ -1,7 +1,7 @@
 //Node modules
-const express = require("express");
-
 const path = require("path");
+
+const express = require("express");
 
 const router = express.Router();
 
@@ -12,8 +12,10 @@ const rootDirectory = require("../util/path");
 
 //Route to views folder
 router.get("/", (req, res, next) => {
-  console.log("shop.js", adminData.products);
-  res.sendFile(path.join(rootDirectory, "views", "shop.html"));
+  res.render("shop");
+
+  // console.log("shop.js", adminData.products);
+  // res.sendFile(path.join(rootDirectory, "views", "shop.html"));
 });
 
 //Module exports

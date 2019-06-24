@@ -1,13 +1,13 @@
 //Node modules
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
 
 //Node modules functions
 const app = express();
 
-//Global configuration values
-app.get("view engine", "pug");
+//Global configuration values templating engines
+app.set("view engine", "pug");
 app.set("views", "views");
 
 //Importing routes
@@ -28,7 +28,7 @@ app.use(shopRoutes);
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
+//console.log(adminData);
 
-console.log(adminData);
 //server
 app.listen(3000);
