@@ -9,9 +9,14 @@ const app = express();
 
 //Global configuration values templating engines
 
-//Pug
-app.set("view engine", "pug");
+//Handlebars
+app.engine("handlebars", expressHbs);
+app.set("view engine", "handlebars");
 app.set("views", "views");
+
+//Pug
+// app.set("view engine", "pug");
+// app.set("views", "views");
 
 //Importing routes
 const adminData = require("./routes/admin");
