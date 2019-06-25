@@ -16,7 +16,11 @@ const products = [];
 //admin/add-product GET request
 router.get("/", (req, res, next) => {
   const products = adminData.products;
-  res.render("shop", { prods: products, pageTitle: "Shop", path: "/" });
+  res.render("shop", {
+    prods: products,
+    pageTitle: "Shop",
+    path: "/admin/add-product"
+  });
 });
 
 //admin/add-product POST request
