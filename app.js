@@ -2,22 +2,12 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const expressHbs = require("express-handlebars");
 
 //Node modules functions
 const app = express();
 
 //Global configuration values templating engines
 
-//Handlebars
-app.engine(
-  "hbs",
-  expressHbs({
-    layoutsDir: "views/layouts/",
-    defaultLayout: "main-layout",
-    extname: "hbs"
-  })
-);
 app.set("view engine", "hbs");
 app.set("views", "views");
 
