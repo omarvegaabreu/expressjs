@@ -14,9 +14,9 @@ const products = [];
 
 //Route to views folder
 //admin/add-product GET request
-router.get("/", (req, res, next) => {
+router.get("/add-poduct", (req, res, next) => {
   const products = adminData.products;
-  res.render("shop", {
+  res.render("add-product", {
     prods: products,
     pageTitle: "Shop",
     path: "/admin/add-product"
