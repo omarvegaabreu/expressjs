@@ -13,11 +13,6 @@ const app = express();
 app.set("view engine", "pug");
 app.set("views", "views");
 
-//Handlebars
-// app.engine("hbs", expressHbs());
-// app.set("view engine", "hbs");
-// app.set("views", "views");
-
 //Importing routes
 const adminData = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
@@ -34,7 +29,7 @@ app.use(shopRoutes);
 
 //Routing 404 page
 app.use((req, res, next) => {
-  res.status(404).render("404");
+  res.status(404).render("404", { pageTitle: "Page Not Found" });
 });
 //console.log(adminData);
 
