@@ -8,7 +8,7 @@ const app = express();
 
 //Global configuration values templating engines
 
-app.set("view engine", "hbs");
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 //Importing routes
