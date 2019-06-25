@@ -10,8 +10,8 @@ const app = express();
 //Global configuration values templating engines
 
 //Handlebars
-app.engine("handlebars", expressHbs);
-app.set("view engine", "handlebars");
+app.engine("hbs", expressHbs());
+app.set("view engine", "hbs");
 app.set("views", "views");
 
 //Pug
