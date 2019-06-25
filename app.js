@@ -9,16 +9,8 @@ const app = express();
 
 //Global configuration values templating engines
 
-//Handlebars
-app.engine(
-  "hbs",
-  expressHbs({
-    layoutsDir: "views/layouts/",
-    defaultLayout: "main-layout",
-    extname: "hbs"
-  })
-);
-app.set("view engine", "hbs");
+//EJS
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 //Importing routes
