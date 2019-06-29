@@ -1,6 +1,7 @@
 //add product empty array
 const products = [];
 
+//add product get request
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
     pageTitle: "Add Product",
@@ -11,11 +12,13 @@ exports.getAddProduct = (req, res, next) => {
   });
 };
 
+//add product post request
 exports.postAddProduct = (req, res, next) => {
   products.push({ title: req.body.title });
   res.redirect("/");
 };
 
+//shop get request
 exports.getProducts = (req, res, next) => {
   res.render("shop", {
     prods: products,

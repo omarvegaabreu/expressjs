@@ -15,6 +15,7 @@ app.set("views", "views");
 //Importing routes
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
+const errorController = require("./controllers/error");
 
 //Parsing
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,10 +28,7 @@ app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
 //Routing 404 page
-app.use((req, res, next) => {
-  res.status(404).render("404", { pageTitle: "Page Not Found" });
-});
-//console.log(adminData);
+app.use(errorController.get404);
 
 //server
 app.listen(3000);
